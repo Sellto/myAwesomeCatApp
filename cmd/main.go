@@ -11,8 +11,8 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		// tmpl, err := template.New("index").Parse(assets.Page)
-		tmpl, err := template.New("index").Parse(assets.Page_v2)
+		tmpl, err := template.New("index").Parse(assets.Page)
+		//tmpl, err := template.New("index").Parse(assets.Page_v2)
 		if err != nil {
 			http.Error(w, "Failed to parse template", http.StatusInternalServerError)
 			return

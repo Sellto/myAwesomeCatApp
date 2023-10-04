@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myawesomecatapp
+  labels:
+    app: myawesomecatapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myawesomecatapp
+  template:
+    metadata:
+      labels:
+        app: myawesomecatapp
+    spec:
+      containers:
+      - name: myawesomecatapp
+        image: selltom/myawesomecatapp:v0.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

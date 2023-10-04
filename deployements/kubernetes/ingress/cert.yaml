@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myawesomecatapp-certs
+spec:
+  secretName: tls-cert-myawesomecatapp
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - cats.unamur.stratos-solution.com
